@@ -1,7 +1,8 @@
 <script setup>
-import { FwbDropdown, FwbListGroup, FwbListGroupItem } from "flowbite-vue";
+import router from "./router";
+import Sidebar from "./components/Sidebar.vue";
 </script>
 
-<template></template>
-
-<style scoped></style>
+<template>
+  <router-view />
+</template>
