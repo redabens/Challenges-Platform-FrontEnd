@@ -1,12 +1,30 @@
+<!-- This component can be used on all the participant and admin seciton, just modify on the routing of the button-->
 <script setup>
-import { FwbBadge } from "flowbite-vue";
-import { FwbButton } from "flowbite-vue";
+import { FwbBadge, FwbButton } from "flowbite-vue";
+import { defineProps } from "vue";
+import { RouterLink } from "vue-router";
+
+// Define props
+defineProps({
+  name: String,
+  status: Boolean,
+  description: String,
+  hackathon: {
+    type: Object,
+    required: true,
+  },
+});
 </script>
+
 <template>
   <div
-    class="flex md:flex-row flex-col gap-4 items-center border-2 rounded-lg mb-2 overflow-hidden hover:shadow-lg transition-shadow duration-150"
+    class="flex flex-col md:flex-row gap-4 items-center border-2 rounded-lg mb-2 overflow-hidden hover:shadow-lg transition-shadow duration-150"
   >
-    <img class="max-h-full md:max-h-36" src="../assets/shuffle-05.jpg" alt="" />
+    <img
+      class="max-h-full md:max-h-36"
+      src="../assets/shuffle-05.jpg"
+      alt="Hackathon thumbnail"
+    />
     <div
       class="flex flex-col md:flex-row gap-4 md:gap-0 justify-between p-4 w-full items-center"
     >
@@ -15,38 +33,24 @@ import { FwbButton } from "flowbite-vue";
         <p class="text-sm text-gray-700 mb-2">
           {{ description }}
         </p>
-        <fwb-badge :type="status ? 'green' : 'red'" class="w-fit">{{
-          status ? "registered" : "not registered"
-        }}</fwb-badge>
+        <FwbBadge :type="status ? 'green' : 'red'" class="w-fit">
+          {{ status ? "Registered" : "Not Registered" }}
+        </FwbBadge>
       </div>
       <div>
-        <router-link
+        <RouterLink
           :to="
             hackathon
-              ? { name: 'HackathonDetails', params: { id: hackathon.id } }
-              : '#'
+              ? {
+                  name: 'Hackathon',
+                  params: { hackathonId: hackathon.id },
+                }
+              : null
           "
         >
-          <fwb-button color="default" size="md"
-            >More details</fwb-button
-          ></router-link
-        >
+          <FwbButton color="default" size="md">More Details</FwbButton>
+        </RouterLink>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: "HackathonCard",
-  props: {
-    name: String,
-    status: Boolean,
-    description: String,
-    hackathon: {
-      id: Number,
-      required: true,
-    },
-  },
-};
-</script>

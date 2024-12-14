@@ -1,3 +1,4 @@
+<!-- This page to display all the hackanthons to the participant -->
 <script setup>
 // import { ref, onMounted } from "vue";
 import HackathonCard from "../../components/HackathonCard.vue";
@@ -42,20 +43,18 @@ const hackathons = [
 // });
 </script>
 <template>
-  <div class="p-4 sm:ml-64">
-    <div>
-      <ul v-if="hackathons">
-        <li v-for="hackathon in hackathons" :key="hackathon.id">
-          <HackathonCard
-            :name="hackathon.name"
-            :status="hackathon.status"
-            :description="hackathon.description"
-            :id="hackathon.id"
-          />
-        </li>
-      </ul>
-      <p v-else>Loading...</p>
-    </div>
+  <div>
+    <ul v-if="hackathons">
+      <li v-for="hackathon in hackathons" :key="hackathon.id">
+        <HackathonCard
+          :name="hackathon.name"
+          :status="hackathon.status"
+          :description="hackathon.description"
+          :hackathon="hackathon"
+        />
+      </li>
+    </ul>
+    <p v-else>Loading...</p>
   </div>
 </template>
 

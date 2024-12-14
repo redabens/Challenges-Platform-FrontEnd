@@ -1,10 +1,10 @@
 <script setup></script>
 <template>
   <header class="p-4 pb-0 flex justify-end">
-    <!-- The user image will route the user profile page epending on his Id -->
-    <router-link :to="userId"
-      ><img src="../assets/icons/user-icon.svg" alt="" class="w-12"
-    /></router-link>
+    <!-- The user image will route the user profile page depending on his Id -->
+    <router-link :to="`${userId}/profile`">
+      <img src="../assets/icons/user-icon.svg" alt="" class="w-12" />
+    </router-link>
   </header>
 </template>
 
