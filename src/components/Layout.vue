@@ -1,10 +1,12 @@
 <script setup>
 import Sidebar from "./Sidebar.vue";
+import Header from "./Header.vue";
 </script>
 <template>
   <div class="layout">
     <Sidebar />
-    <div class="content" @close="">
+    <Header />
+    <div class="p-4 sm:ml-64">
       <router-view />
     </div>
   </div>
@@ -15,6 +17,7 @@ export default {
   name: "Layout",
   components: {
     Sidebar,
+    Header,
   },
 };
 </script>

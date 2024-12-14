@@ -43,7 +43,7 @@ onMounted(() => {
       <div>
         <router-link to="/dashboard" class="flex items-center ps-2.5 mb-5">
           <img
-            src="../assets/logo.svg"
+            src="../assets/icons/logo.svg"
             class="h-6 me-3 sm:h-7"
             alt="Flowbite Logo"
           />
