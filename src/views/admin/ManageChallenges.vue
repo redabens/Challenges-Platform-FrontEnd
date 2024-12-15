@@ -1,15 +1,35 @@
-<template>
-    <h1>Manage Challenges</h1>
-    <div v-for="challenge in challenges" :key="challenge.id" class="challenge-card">
+
+  <template>
+      <div class="flex items-center gap-4">
+            <p class="text-4xl font-bold text-gray-900 mb-4" style="margin: 30px;">Manage Challenges</p>
+      </div>
+    
+      
+    <div v-for="challenge in challenges" :key="challenge.id"     class="flex flex-col md:flex-row gap-4 items-center border-2 rounded-lg mb-2 overflow-hidden hover:shadow-lg transition-shadow duration-150"
+    style="padding: 10px;"
+    >
+    <img
+      class="max-h-full md:max-h-36"
+      src="../../assets/shuffle-05.jpg"
+      alt="Hackathon thumbnail"
+    />
       <div class="button-group">
         <div class="challenge-style">{{ challenge.name }}</div>
-        <button class="button" style="margin-left: 40px;background-color:#00ca86;" @click="viewChallenge(challenge.id)">View Challenges</button>
+        <button class="button" style="margin-left: 40px;background-color:#00c8b8;" @click="viewChallenge(challenge.name)">View Challenges</button>
         <button class="button" style="margin-left: 10px;background-color:#006ae2;" @click="hideChallenge(challenge.id)">Hide</button>
         <button class="button" style="margin-left: 10px;background-color:#d60000;" @click="deleteChallenge(challenge.id)">
           <i class="fa fa-trash"></i>
         </button>
       </div>
     </div>
+
+    <button
+      class="absolute bottom-8 right-8 p-4 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 focus:outline-none"
+      @click="addChallenge()"
+    >
+      <span class="text-2xl font-bold"> + add a hackathon </span>
+    </button>
+
   </template>
   
     
@@ -35,6 +55,9 @@ export default {
     deleteChallenge(challengeId) {
       console.log(`Deleting challenge with ID: ${challengeId}`);
       this.challenges = this.challenges.filter(challenge => challenge.id !== challengeId); // Remove from list
+    },
+    addChallenge() {
+        this.$router.push({ name: 'AddChallenge'});
     },
   },
 };

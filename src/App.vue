@@ -14,6 +14,7 @@
 </link>
 
 <script>
+import './style.css';
 import Sidebar from './components/sidebar.vue';
 
 export default {

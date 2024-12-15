@@ -1,9 +1,11 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from 'vue-router';
-import ManageChallenges from '../components/ManageChallenges.vue';
-import ManageTeams from '../components/ManageTeams.vue';
-import ManageSubmissions from '../components/ManageSubmissions.vue';
-import ChallengeDetails from '../components/ChallengeDetails.vue';
+import ManageChallenges from '../views/admin/ManageChallenges.vue';
+import ManageTeams from '../views/admin/ManageTeams.vue';
+import ManageSubmissions from '../views/admin/ManageSubmissions.vue';
+import ChallengeDetails from '../views/admin/ChallengeDetails.vue';
+import AddChallenge from '../views/admin/AddChallenge.vue';
+
 
 const routes = [
   {
@@ -25,7 +27,13 @@ const routes = [
     path: '/challenge-details/:id',
     name: 'ChallengeDetails',
     component: ChallengeDetails,
-    props: true, // This allows us to pass the route params as props to the component
+    props: true,
+  },
+  {
+    path: '/add-challenge',
+    name: 'AddChallenge',
+    component: AddChallenge,
+    props: true,
   },
 ];
 

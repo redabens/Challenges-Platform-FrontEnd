@@ -1,10 +1,11 @@
 <!-- src/components/Sidebar.vue -->
 <template>
-  <div class="welcome-bar">
-      Welcome, Admin
-  </div>
+  <div class="welcome-bar flex items-center gap-2">
+  <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8" />
+  <span>Welcome, Admin</span>
+</div>
   <div class="sidebar">
-    <ul style="padding: 15px;">
+    <ul style="padding: 20%;">
       <li style="margin-bottom: 40px;"><router-link to="/manage-challenges">Manage Challenges</router-link></li>
       <li style="margin-bottom: 40px;"><router-link to="/manage-teams">Manage teams</router-link></li>
       <li style="margin-bottom: 40px;"><router-link to="/manage-submissions">Manage Submissions</router-link></li>
