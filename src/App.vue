@@ -15,7 +15,7 @@
 
 <script>
 import './style.css';
-import Sidebar from './components/sidebar.vue';
+import Sidebar from './components/admin/sidebar.vue';
 
 export default {
   name: "App",

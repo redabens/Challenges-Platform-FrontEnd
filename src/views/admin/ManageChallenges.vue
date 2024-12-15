@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     viewChallenge(challengeId) {
-        this.$router.push({ name: 'ChallengeDetails', params: { id: challengeId } });
+        this.$router.push({ name: 'admin/ChallengeDetails', params: { id: challengeId } });
     },
     hideChallenge(challengeId) {
       console.log(`Hiding challenge with ID: ${challengeId}`);

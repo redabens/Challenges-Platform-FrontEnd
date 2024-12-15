@@ -1,7 +1,7 @@
 <!-- src/components/Sidebar.vue -->
 <template>
   <div class="welcome-bar flex items-center gap-2">
-  <img src="../assets/logo.svg" alt="Logo" class="h-8 w-8" />
+  <img src="../../assets/logo.svg" alt="Logo" class="h-8 w-8" />
   <span>Welcome, Admin</span>
 </div>
   <div class="sidebar">
