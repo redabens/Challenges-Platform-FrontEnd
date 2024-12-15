@@ -5,7 +5,7 @@
       <form @submit.prevent="addChallenge">
         <!-- Challenge Name -->
         <div class="mb-4">
-          <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Challenge Name</label>
+          <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Hackathon Name</label>
           <input
             type="text"
             id="name"
@@ -31,16 +31,51 @@
 
         <!-- Link to downloadable pdf -->
         <div class="mb-4">
-          <label for="documentation" class="block text-lg font-medium text-gray-700 mb-2">Documentation link</label>
-          <textarea
-            id="documentation"
-            v-model="newChallenge.documentation"
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            rows="4"
-            placeholder="Enter challenge documentation"
-            required
-          ></textarea>
+        <label for="documentation" class="block text-lg font-medium text-gray-700 mb-2">Documentation link</label>
+        <input
+          id="documentation"
+          v-model="newChallenge.documentation"
+          type="text"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter challenge documentation"
+          required
+        />
         </div>
+
+        <div class="mb-4">
+        <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Challenge 1 title</label>
+        <input
+          id="name"
+          v-model="newChallenge.name"
+          type="text"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          placeholder="Enter challenge name"
+          required
+        />
+        </div>
+        <div class="mb-4">
+        <label for="start_date" class="block text-lg font-medium text-gray-700 mb-2">Start date</label>
+        <input
+          id="start_date"
+          v-model="newChallenge.start_date"
+          type="date"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        </div>
+        <div class="mb-4">
+        <label for="end_date" class="block text-lg font-medium text-gray-700 mb-2">End date</label>
+        <input
+          id="end_date"
+          v-model="newChallenge.end_date"
+          type="date"
+          class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          required
+        />
+        </div>
+
+
+
   
         <!-- Submit Button -->
         <button
