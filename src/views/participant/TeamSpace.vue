@@ -10,13 +10,13 @@ const figmaLink = ref("");
 const driveLink = ref("");
 
 // Add the api call here to initialize the themes
-setTimeout(() => {
-  themes.value = [
-    { value: "1", name: "Theme 1" },
-    { value: "2", name: "Theme 2" },
-    { value: "3", name: "Theme 3" },
-  ];
-}, 4000);
+// setTimeout(() => {
+themes.value = [
+  { value: "1", name: "Theme 1" },
+  { value: "2", name: "Theme 2" },
+  { value: "3", name: "Theme 3" },
+];
+// }, 4000);
 
 // Submit the form data
 const submit = () => {

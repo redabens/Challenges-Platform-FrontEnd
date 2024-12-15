@@ -2,8 +2,22 @@ import { createWebHistory, createRouter } from "vue-router";
 
 const routes = [
   {
+    path: "/",
+    name: "Landing",
+    component: () => import("../views/Landing.vue"),
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/Login.vue"),
+  },
+  {
+    path: "/signup",
+    name: "Signup",
+    component: () => import("../views/SignUp.vue"),
+  },
+  {
     path: "/hackathons",
-    // component: () => import("../views/participant/Dashboard.vue"),
     component: () => import("../components/Layout.vue"),
     children: [
       {
@@ -16,11 +30,19 @@ const routes = [
         path: ":hackathonId",
         name: "Hackathon",
         component: () => import("../views/participant/HackathonDetails.vue"),
+        children: [],
       },
       {
-        path: "teamspace",
-        name: "TeamSpace",
+        path: ":hackathonId/createteam",
+        name: "CreateTeam",
+        component: () => import("../views/participant/CreateTeam.vue"),
+        children: [],
+      },
+      {
+        path: ":hackathonId/:teamId",
+        name: "Team",
         component: () => import("../views/participant/TeamSpace.vue"),
+        children: [],
       },
     ],
   },

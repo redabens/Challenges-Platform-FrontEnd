@@ -5,7 +5,7 @@
     <div class="flex flex-col md:flex-row gap-8">
       <div>
         <h1 class="text-3xl font-semibold mb-4">
-          {{ hackathon.name + " " + $route.params.hackathonId }}
+          {{ hackathon.name }}
         </h1>
         <p class="text-gray-600">
           {{ hackathon.startDate }} to {{ hackathon.endDate }}
@@ -78,8 +78,11 @@
       <img class="h-48" :src="hackathon.img" />
     </div>
     <!-- This button will route to the team creation page -->
-    <router-link class="flex" to="/team"
-      ><fwb-button class="block w-full" size="xl" color="green"
+    <router-link
+      class="flex"
+      :to="{ name: 'CreateTeam', params: { hackathonId: hackathon.id } }"
+    >
+      <fwb-button class="block w-full" size="xl" color="green"
         >Join</fwb-button
       ></router-link
     >
@@ -89,8 +92,10 @@
 <script setup>
 import { ref } from "vue";
 import { FwbButton } from "flowbite-vue";
+import { RouterLink } from "vue-router";
 
 const hackathon = ref({
+  id: 1,
   name: "",
   overview: "",
   img: "/shuffle-05.jpg",
@@ -101,6 +106,7 @@ const hackathon = ref({
 });
 // I hardcoded the hackathon object, you can add the api call here
 hackathon.value = {
+  id: 1,
   name: "Hackathon 1",
   overview:
     "Join us for an exciting hackathon where you can showcase your skills, collaborate with others, and create innovative solutions. Whether you're a seasoned developer or just starting out, this event is the perfect opportunity to learn, network, and have fun. Don't miss out on the chance to be part of something amazing!",
