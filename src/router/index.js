@@ -48,23 +48,6 @@ const routes = [
   },
 ];
 
-// {
-//   path: "/",
-//   name: "Home",
-//   component: () => import("../views/Home.vue"),
-// },
-
-// {
-//   path: "/dashboard/hackathons",
-//   name: "Hackathons",
-//   component: () => import("../views/participant/Hackathons.vue"),
-// },
-// {
-//   path: "/dashboard",
-//   name: "Dashboard",
-//   component: () => import("../views/participant/Dashboard.vue"),
-// },
-
 const router = createRouter({
   history: createWebHistory(),
   routes,
